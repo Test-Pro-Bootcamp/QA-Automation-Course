@@ -1,6 +1,6 @@
 package lesson7;
 
-public class Homework7Answered {
+public class Homework7Answer {
     public static void main(String[] args) {
 
 //        Write a simple application to finish the assignments below:
