@@ -78,7 +78,7 @@ public class SetsLesson {
 
         // Let's find out the prime number
 
-        System.out.println(isPrime(13));
+//        System.out.println(isPrime(13));
 
     }
 //    public static boolean isPrime(int number){
