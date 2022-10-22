@@ -1,4 +1,4 @@
-package java.lesson7;
+package lesson7;
 
 public class Homework7Answer {
     public static void main(String[] args) {

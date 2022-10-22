@@ -1,4 +1,4 @@
-package java.snippets.abstractionClass;
+package snippets.abstractionClass;
 
 class AbstractionDemo {
     public static void main(String[] args) {

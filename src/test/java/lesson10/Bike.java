@@ -1,4 +1,4 @@
-package java.lesson10;
+package lesson10;
 
 public class Bike extends Vehicle {
 	private int gear;

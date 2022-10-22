@@ -1,4 +1,4 @@
-package java.lesson3;
+package lesson3;
 
 
 public class Lesson3Practice3 {

@@ -1,4 +1,4 @@
-package java.lesson7;
+package lesson7;
 
 
 public class Lesson7Practice1 {
@@ -33,5 +33,4 @@ public class Lesson7Practice1 {
 	private static void exception() throws Exception{
 		new Exception("I am throwing an exception!");
 	}
-
 }

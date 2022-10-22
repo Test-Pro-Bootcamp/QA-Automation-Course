@@ -1,4 +1,4 @@
-package java.lesson5;
+package lesson5;
 
 
 import java.util.Arrays;
@@ -36,5 +36,4 @@ public class Lesson5Practice1 {
 		colors[4] = "red";
 		System.out.println(Arrays.toString(colors));
 	}
-
 }

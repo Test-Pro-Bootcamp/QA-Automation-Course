@@ -1,7 +1,6 @@
-package java.snippets.interfaces;
+package snippets.interfaces;
 
 public class InterfacesDemo {
-
 
     public static void main(String[] args) {
         ChromeBrowser chrome = new ChromeBrowser();
