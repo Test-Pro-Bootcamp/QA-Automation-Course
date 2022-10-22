@@ -1,6 +1,5 @@
-package java.lesson12;
+package lesson13;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +8,6 @@ public class Homework13 {
     public static void main(String[] args) {
 
         HashMap<Integer, String> streetNumberAndNames = new HashMap<>();
-
 
         streetNumberAndNames.put(1000, "Liam");
         streetNumberAndNames.put(1001, "Noah");
@@ -37,10 +35,5 @@ public class Homework13 {
                 System.out.println(i+" " +streetNumberAndNames.get(i));
             }
         }
-
-
-
-
-
     }
 }

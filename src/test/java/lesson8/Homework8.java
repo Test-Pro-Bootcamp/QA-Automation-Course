@@ -1,4 +1,4 @@
-package java.lesson8;
+package lesson8;
 
 public class Homework8 {
 
@@ -9,7 +9,7 @@ public class Homework8 {
 //        - Check that if a bank customer deposits $500, $150 and $35 and then withdraws $40 and $120 the balance is correct
 //        - Print out a meaningful message if it is correct and if not
 
-        BankingAccount myAccount = new BankingAccount();
+        BankingAccount2 myAccount = new BankingAccount2();
         myAccount.deposit(500);
         // please finish the rest
     }

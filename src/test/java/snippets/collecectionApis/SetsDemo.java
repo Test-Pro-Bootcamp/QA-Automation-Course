@@ -1,4 +1,4 @@
-package java.snippets.collecectionApis;
+package snippets.collecectionApis;
 
 import java.util.*;
 

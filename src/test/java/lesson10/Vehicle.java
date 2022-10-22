@@ -1,4 +1,4 @@
-package java.lesson10;
+package lesson10;
 
 public abstract class Vehicle implements VehicleInterface {
 	private int gear;

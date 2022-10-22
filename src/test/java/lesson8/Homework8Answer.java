@@ -1,4 +1,4 @@
-package java.lesson8;
+package lesson8;
 
 public class Homework8Answer {
 
