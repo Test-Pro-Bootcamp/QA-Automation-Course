@@ -5,30 +5,45 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class Homework16 {
 
+    WebDriver driver;
+    String email = "demo@TestPro30";
+    String password = "testpro123!";
+    String searchPhrase = "Pluto";
+
     @Test
     public void userSearchesSong() throws InterruptedException {
+        login();
+        search(searchPhrase);
+        Assert.assertTrue(getFirstResultText().contains(searchPhrase));
+    }
 
-        // Pre-reqs
-        if (System.getProperty("os.name").toLowerCase().contains("win")) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        }
+    private String getFirstResultText() {
+        WebElement firstSongResult = driver.findElement(By.cssSelector(".results .details"));
+        return firstSongResult.getText();
+    }
 
-        String url = "https://bbb.testpro.io/";
-        WebDriver driver = new ChromeDriver();
+    @AfterMethod
+    private void cleanup() {
+        // Cleanup
+        driver.quit();
+    }
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get(url);
-        driver.manage().window().maximize();
+    private void search(String searchPhrase) throws InterruptedException {
+        WebElement searchField = driver.findElement(By.cssSelector("input[type=search]"));
+        Thread.sleep(1000);
+        searchField.sendKeys(searchPhrase);
+        Thread.sleep(2000);
+    }
 
-        String email = "demo@TestPro30";
-        String password = "testpro123!";
-
+    private void login() throws InterruptedException {
         // User logs in
         WebElement emailAddressField = driver.findElement(By.cssSelector("input[type='email']"));
         WebElement passwordField = driver.findElement(By.cssSelector("input[type='password']"));
@@ -38,20 +53,20 @@ public class Homework16 {
         passwordField.sendKeys(password);
         Thread.sleep(1000);
         loginButton.click();
+    }
 
-        // Search for 'Pluto'
-        WebElement searchField = driver.findElement(By.cssSelector("input[type=search]"));
-        Thread.sleep(1000);
-        String searchPhrase = "Pluto";
-        searchField.sendKeys(searchPhrase);
-        Thread.sleep(2000);
+    @BeforeMethod
+    private void prereqs() {
+        // Pre-reqs
+        if (System.getProperty("os.name").toLowerCase().contains("win")) {
+            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        }
 
-        // Validate that search result contains the search phrase
-        WebElement firstSongResult = driver.findElement(By.cssSelector(".results .details"));
-        String firstSongTitle = firstSongResult.getText();
-        Assert.assertTrue(firstSongTitle.contains(searchPhrase));
+        String url = "https://bbb.testpro.io/";
+        driver = new ChromeDriver();
 
-        // Cleanup
-        driver.quit();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get(url);
+        driver.manage().window().maximize();
     }
 }
