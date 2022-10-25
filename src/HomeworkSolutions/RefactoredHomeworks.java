@@ -32,8 +32,6 @@ public class RefactoredHomeworks extends BaseTest  {
     public void addSongToPlaylist() throws InterruptedException {
         navigateToHome();
         login();
-        createPlaylist();
-        enterPlaylistName(playlistName);
         searchSong(songTitle);
         addSongToPlaylist(playlistName);
         Assert.assertTrue(getNotificationText().contains(newSongAddedNotification));
